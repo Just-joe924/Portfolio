@@ -6,6 +6,7 @@ import { SkillGrid } from "@/components/about/skill-grid";
 import { Timeline } from "@/components/about/timeline";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
+import { Reveal } from "@/components/ui/reveal";
 import { publicFileExists } from "@/lib/assets";
 import { site } from "@/lib/site";
 
@@ -35,42 +36,52 @@ export default function AboutPage() {
 
       <Container className="pb-4">
         <div className="max-w-prose space-y-5 text-base leading-relaxed">
-          {bio.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+          {bio.map((paragraph, index) => (
+            <Reveal key={paragraph.slice(0, 32)} delay={index * 70}>
+              <p>{paragraph}</p>
+            </Reveal>
           ))}
         </div>
 
         {hasCv && (
-          <a
-            href={cvHref}
-            download
-            className="mt-8 inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
-          >
-            <Download className="h-4 w-4" aria-hidden />
-            {site.cv.label}
-          </a>
+          <Reveal className="mt-8">
+            <a
+              href={cvHref}
+              download
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
+            >
+              <Download className="h-4 w-4" aria-hidden />
+              {site.cv.label}
+            </a>
+          </Reveal>
         )}
       </Container>
 
       <Container className="pt-14">
-        <h2 className="font-display text-2xl font-semibold tracking-tight">Skills</h2>
-        <p className="mt-2 max-w-prose text-muted">
-          What I reach for, and what I&rsquo;d be comfortable being questioned on.
-        </p>
-        <div className="mt-6">
+        <Reveal>
+          <h2 className="font-display text-2xl font-semibold tracking-tight">Skills</h2>
+          <p className="mt-2 max-w-prose text-muted">
+            What I reach for, and what I&rsquo;d be comfortable being questioned on.
+          </p>
+        </Reveal>
+        <Reveal delay={90} className="mt-6">
           <SkillGrid />
-        </div>
+        </Reveal>
       </Container>
 
       <Container className="pt-14">
-        <h2 className="font-display text-2xl font-semibold tracking-tight">Experience & education</h2>
-        <div className="mt-8">
+        <Reveal>
+          <h2 className="font-display text-2xl font-semibold tracking-tight">
+            Experience & education
+          </h2>
+        </Reveal>
+        <Reveal delay={90} className="mt-8">
           <Timeline />
-        </div>
+        </Reveal>
       </Container>
 
       <Container className="pt-14">
-        <div className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+        <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-8">
           <h2 className="font-display text-xl font-semibold tracking-tight">
             When I&rsquo;m not writing code
           </h2>
@@ -89,7 +100,7 @@ export default function AboutPage() {
               aria-hidden
             />
           </Link>
-        </div>
+        </Reveal>
       </Container>
     </>
   );
