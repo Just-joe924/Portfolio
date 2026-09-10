@@ -12,7 +12,7 @@ export type SocialLink = {
 };
 
 export const site = {
-  name: "Emmanuel Johnson",
+  name: "Oreoluwa Johnson",
   shortName: "Joe",
   role: "Full-stack developer",
   tagline: "Full-stack developer, photographer, footballer.",
@@ -23,7 +23,7 @@ export const site = {
   /** The hero. Rewrite these two strings whenever the pitch changes. */
   headline: "I build full-stack web applications.",
   intro:
-    "I'm Emmanuel Johnson — Joe to most people. I'm a student developer who works across the whole stack: TypeScript, React and Next.js at the front, APIs and databases behind them. I care about software that people can actually use, and I ship it rather than leave it half-finished.",
+    "I'm Oreoluwa Johnson — Joe to most people. I'm a student developer who works across the whole stack: TypeScript, React and Next.js at the front, APIs and databases behind them. I care about software that people can actually use, and I ship it rather than leave it half-finished.",
 
   /** The "currently" line. Keep it current — a stale one is worse than none. */
   status: {
@@ -37,7 +37,7 @@ export const site = {
    * Until the file exists the button is skipped rather than serving a 404.
    */
   cv: {
-    file: "emmanuel-johnson-cv.pdf",
+    file: "oreoluwa-johnson-cv.pdf",
     label: "Download CV",
   },
 
@@ -47,7 +47,7 @@ export const site = {
    */
   portrait: {
     src: "/images/portrait.jpg",
-    alt: "Emmanuel Johnson",
+    alt: "Oreoluwa Johnson",
     width: 1200,
     height: 1500,
   },
