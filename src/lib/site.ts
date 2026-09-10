@@ -17,8 +17,9 @@ export const site = {
   role: "Full-stack developer",
   tagline: "Full-stack developer, photographer, footballer.",
   email: "theemmanueljohnson@gmail.com",
-  // TODO: set this to the real domain once Vercel is wired up in stage 9.
-  url: "https://portfolio-just-joe924.vercel.app",
+  location: "Lagos, Nigeria",
+  // Domain from your CV — point it at Vercel in stage 9.
+  url: "https://oreoluwajohnson.com",
 
   /** The hero. Rewrite these two strings whenever the pitch changes. */
   headline: "I build full-stack web applications.",
@@ -55,9 +56,7 @@ export const site = {
   socials: {
     github: "https://github.com/Just-joe924",
     instagram: "https://www.instagram.com/theemmanueljohnson/",
-    // TODO: paste your LinkedIn profile URL here. While it is empty the icon
-    // is skipped rather than rendering a dead link.
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/oreoluwa-johnson-540a2b35a",
   },
 } as const;
 
