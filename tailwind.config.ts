@@ -22,6 +22,7 @@ const config: Config = {
         muted: token("muted"),
         border: token("border"),
         ring: token("ring"),
+        danger: token("danger"),
         accent: {
           DEFAULT: token("accent"),
           hover: token("accent-hover"),
