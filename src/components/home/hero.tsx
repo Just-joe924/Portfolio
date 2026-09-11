@@ -4,7 +4,8 @@ import { ArrowRight, Download, Mail } from "lucide-react";
 
 import { Status } from "@/components/home/status";
 import { Container } from "@/components/ui/container";
-import { NEUTRAL_BLUR_DATA_URL, publicFileExists } from "@/lib/assets";
+import { publicFileExists } from "@/lib/assets";
+import { NEUTRAL_BLUR_DATA_URL } from "@/lib/blur";
 import { site } from "@/lib/site";
 
 const initials = site.name
