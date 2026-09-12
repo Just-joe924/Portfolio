@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Sidebar } from "@/components/layout/sidebar";
+import { PersonJsonLd } from "@/components/json-ld";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AmbientBackground } from "@/components/ui/ambient-background";
 import { CursorGlow } from "@/components/ui/cursor-glow";
@@ -11,15 +12,64 @@ import { site } from "@/lib/site";
 
 import "./globals.css";
 
+/**
+ * Site-wide defaults. Every page inherits these and overrides what it needs —
+ * `template` wraps a page's own title, so a page only ever declares its own
+ * name ("About") and gets "About — Oreoluwa Johnson".
+ *
+ * Canonical URLs are deliberately *not* set here: a canonical inherited by
+ * every route would point them all at the home page. Each page declares its
+ * own in `alternates.canonical`.
+ */
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: `${site.name} — ${site.role}`,
     template: `%s — ${site.name}`,
   },
-  description: site.tagline,
+  description: site.description,
+  applicationName: site.name,
   authors: [{ name: site.name, url: site.socials.github }],
-  // Open Graph, icons and the rest land in stage 8.
+  creator: site.name,
+  publisher: site.name,
+  keywords: [
+    site.name,
+    "full-stack developer",
+    "web developer Lagos",
+    "TypeScript developer",
+    "React developer",
+    "Next.js developer",
+    "portfolio",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      // Let Google use the full OG image and an untruncated snippet.
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  // Stops iOS Safari turning stray numbers in the copy into phone links.
+  formatDetection: { telephone: false, address: false, email: false },
+
+  // The images themselves come from app/opengraph-image.tsx and
+  // app/twitter-image.tsx — Next adds the URL, dimensions and type tags.
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+    url: site.url,
+    locale: "en_NG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -28,6 +78,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // React hydrates, which is a deliberate server/client mismatch.
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontBody.variable} ${fontDisplay.variable}`}>
+        <PersonJsonLd />
+
         {/* Scroll reveals start hidden and are shown by JS; without JS they
             must never stay invisible. */}
         <noscript>
