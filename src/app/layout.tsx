@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   publisher: site.name,
   keywords: [
     site.name,
+    "software engineer",
+    // Kept alongside the title above: it's the phrase people actually search
+    // for, and it still describes the work.
     "full-stack developer",
     "web developer Lagos",
     "TypeScript developer",

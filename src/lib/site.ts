@@ -14,8 +14,8 @@ export type SocialLink = {
 export const site = {
   name: "Oreoluwa Johnson",
   shortName: "Joe",
-  role: "Full-stack developer",
-  tagline: "Full-stack developer, photographer, footballer.",
+  role: "Software engineer",
+  tagline: "Software engineer, photographer, footballer.",
 
   /**
    * The meta description — what Google prints under the title and what
@@ -24,7 +24,7 @@ export const site = {
    * would actually search for.
    */
   description:
-    "Oreoluwa Johnson is a full-stack developer in Lagos, Nigeria, building web applications with TypeScript, React, Next.js and Postgres. Projects, photography and contact.",
+    "Oreoluwa Johnson is a software engineer in Lagos, Nigeria, building web applications with TypeScript, React, Next.js and Postgres. Projects, photography and contact.",
   email: "theemmanueljohnson@gmail.com",
   location: "Lagos, Nigeria",
 

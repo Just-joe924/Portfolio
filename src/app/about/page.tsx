@@ -7,19 +7,20 @@ import { Timeline } from "@/components/about/timeline";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { Typewriter } from "@/components/ui/typewriter";
 import { publicFileExists } from "@/lib/assets";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${site.name} — Computer Science student and full-stack developer in Lagos, Nigeria. Background, skills and the route that got me here.`,
+  description: `${site.name} — Computer Science student and software engineer in Lagos, Nigeria. Background, skills and the route that got me here.`,
   alternates: { canonical: "/about" },
 };
 
 /** The bio. Edit these four strings; everything else on the page is data-driven. */
 const bio = [
-  "I'm Oreoluwa Johnson — Joe to most people. I'm a Computer Science undergraduate at Anchor University in Lagos, and a full-stack developer who works in TypeScript across React, Next.js and Express.",
-  "Right now I'm a full-stack software developer intern at KevaAI, building their real estate web application. It's where I learned what shipping actually looks like: over a hundred commits across twenty-odd feature branches, Figma designs turned into working interfaces, API endpoints written to support them, and a database schema migration guide I wrote so the rest of the team had conventions to follow rather than folklore.",
+  "I'm Oreoluwa Johnson — Joe to most people. I'm a Computer Science undergraduate at Anchor University in Lagos, and a software engineer who works in TypeScript across React, Next.js and Express.",
+  "Right now I'm a software engineer intern at KevaAI, building their real estate web application. It's where I learned what shipping actually looks like: over a hundred commits across twenty-odd feature branches, Figma designs turned into working interfaces, API endpoints written to support them, and a database schema migration guide I wrote so the rest of the team had conventions to follow rather than folklore.",
   "Outside work I build things end to end. Cara is a full-stack fashion store with a Supabase Postgres schema behind it — row-level security, triggers, an Express order-finalisation endpoint. I've automated university admission letters with templated PDF generation and email delivery, and built a payments dashboard for a departmental platform serving over 200 students. The pattern I keep coming back to is the same: take something people currently do by hand, and make the software do it properly.",
   "Away from the keyboard I shoot photography and play football — I picked up a league title and medal in the 2024/2025 AUPL season. Both feed the same habit as the code, which is paying attention to details other people walk past.",
 ];
@@ -32,7 +33,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         title="About"
-        intro="Computer Science student, full-stack developer, and a fairly committed photographer."
+        intro="Computer Science student, software engineer, and a fairly committed photographer."
       />
 
       <Container className="pb-4">
@@ -60,7 +61,9 @@ export default function AboutPage() {
 
       <Container className="pt-14">
         <Reveal>
-          <h2 className="font-display text-2xl font-semibold tracking-tight">Skills</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight">
+            <Typewriter>Skills</Typewriter>
+          </h2>
           <p className="mt-2 max-w-prose text-muted">
             What I reach for, and what I&rsquo;d be comfortable being questioned on.
           </p>
@@ -73,7 +76,7 @@ export default function AboutPage() {
       <Container className="pt-14">
         <Reveal>
           <h2 className="font-display text-2xl font-semibold tracking-tight">
-            Experience & education
+            <Typewriter>Experience &amp; education</Typewriter>
           </h2>
         </Reveal>
         <Reveal delay={90} className="mt-8">
@@ -84,7 +87,7 @@ export default function AboutPage() {
       <Container className="pt-14">
         <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-8">
           <h2 className="font-display text-xl font-semibold tracking-tight">
-            When I&rsquo;m not writing code
+            <Typewriter>When I&rsquo;m not writing code</Typewriter>
           </h2>
           <p className="mt-3 max-w-prose text-muted">
             I shoot photography — matchdays, campus, people I know — and I play football. The

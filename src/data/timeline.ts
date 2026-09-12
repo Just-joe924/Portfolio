@@ -7,7 +7,7 @@ import type { TimelineEntry } from "@/types/timeline";
 export const timeline: TimelineEntry[] = [
   {
     period: "2026 — Present",
-    title: "Full-Stack Software Developer Intern",
+    title: "Software Engineer Intern",
     organisation: "KevaAI",
     kind: "work",
     points: [
@@ -28,6 +28,6 @@ export const timeline: TimelineEntry[] = [
     title: "BSc Computer Science",
     organisation: "Anchor University, Lagos",
     kind: "education",
-    points: ["Currently in third year, with a 4.56 GPA."],
+    points: ["Currently in third year, with a 4.57 GPA."],
   },
 ];
