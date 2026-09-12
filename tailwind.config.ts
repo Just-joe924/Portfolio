@@ -20,8 +20,13 @@ const config: Config = {
         },
         foreground: token("foreground"),
         muted: token("muted"),
-        border: token("border"),
+        border: {
+          DEFAULT: token("border"),
+          /** border-border-strong — for control outlines. See globals.css. */
+          strong: token("border-strong"),
+        },
         ring: token("ring"),
+        danger: token("danger"),
         accent: {
           DEFAULT: token("accent"),
           hover: token("accent-hover"),
