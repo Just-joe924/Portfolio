@@ -40,7 +40,7 @@ export function ProjectLinks({
           href={repoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
+          className="inline-flex h-11 items-center gap-2 rounded-md border border-border-strong px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
         >
           <Github className="h-4 w-4" aria-hidden />
           View code
