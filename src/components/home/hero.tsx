@@ -59,7 +59,7 @@ export function Hero() {
               <a
                 href={cvHref}
                 download
-                className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
+                className="inline-flex h-11 items-center gap-2 rounded-md border border-border-strong px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
               >
                 <Download className="h-4 w-4" aria-hidden />
                 {site.cv.label}
@@ -68,7 +68,7 @@ export function Hero() {
 
             <Link
               href="/contact"
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-border-strong px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
             >
               <Mail className="h-4 w-4" aria-hidden />
               Get in touch
@@ -79,10 +79,15 @@ export function Hero() {
         {/* Compact avatar on phones so the headline stays above the fold;
             a full portrait column from lg upwards. */}
         <div
-          className="order-first animate-fade-up lg:order-none lg:justify-self-end"
+          // lg:w-full, not justify-self-end: aligning the grid item to the end
+          // makes it shrink to fit its contents, and its only child is
+          // absolutely positioned — so there is nothing to measure and the
+          // column collapsed to the width of its own border. The box inside
+          // right-aligns itself with ml-auto instead.
+          className="order-first animate-fade-up lg:order-none lg:w-full"
           style={{ animationDelay: "240ms" }}
         >
-          <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border bg-surface-raised sm:h-28 sm:w-28 lg:h-auto lg:aspect-[4/5] lg:w-full lg:max-w-sm lg:rounded-2xl">
+          <div className="relative h-24 w-24 overflow-hidden rounded-full border border-border bg-surface-raised sm:h-28 sm:w-28 lg:ml-auto lg:h-auto lg:aspect-[4/5] lg:w-full lg:max-w-sm lg:rounded-2xl">
             {hasPortrait ? (
               <Image
                 src={site.portrait.src}
