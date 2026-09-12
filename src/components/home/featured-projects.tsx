@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { ProjectCard } from "@/components/projects/project-card";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { Typewriter } from "@/components/ui/typewriter";
 import { getFeaturedProjects } from "@/lib/projects";
 
 /** The two projects flagged `featured` in src/data/projects.ts. */
@@ -15,7 +16,9 @@ export function FeaturedProjects() {
     <Container className="pb-4 pt-6 md:pt-10">
       <Reveal>
         <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <h2 className="font-display text-2xl font-semibold tracking-tight">Selected work</h2>
+          <h2 className="font-display text-2xl font-semibold tracking-tight">
+            <Typewriter>Selected work</Typewriter>
+          </h2>
           <Link
             href="/projects"
             className="group inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
