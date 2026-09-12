@@ -113,7 +113,7 @@ function CopyEmailButton({ addressRef }: { addressRef: React.RefObject<HTMLSpanE
         type="button"
         onClick={copy}
         aria-label="Copy email address"
-        className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border px-2.5 text-xs font-medium text-muted transition-colors hover:bg-surface-raised hover:text-foreground"
+        className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border-strong px-2.5 text-xs font-medium text-muted transition-colors hover:bg-surface-raised hover:text-foreground"
       >
         {state === "copied" ? (
           <Check className="h-3.5 w-3.5 text-accent" aria-hidden />

@@ -16,6 +16,13 @@
     --foreground: 15 16 20;
     --muted: 87 97 100;
     --border: 213 221 219;
+    /*
+     * Control outlines. An input or an outlined button has nothing but its
+     * border to say it's interactive, and WCAG 1.4.11 asks for 3:1 against the
+     * background for that — which --border, at 1.2:1, is nowhere near. It stays
+     * as it is for decorative edges: card outlines, dividers, the footer rule.
+     */
+    --border-strong: 120 132 132;
     --accent: 20 116 100;
     --accent-hover: 16 96 83;
     --accent-foreground: 255 255 255;
@@ -35,6 +42,7 @@
     --foreground: 238 243 242;
     --muted: 154 165 168;
     --border: 44 48 56;
+    --border-strong: 106 114 124;
     --accent: 94 197 176;
     --accent-hover: 122 212 194;
     --accent-foreground: 15 16 20;

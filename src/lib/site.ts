@@ -16,10 +16,28 @@ export const site = {
   shortName: "Joe",
   role: "Full-stack developer",
   tagline: "Full-stack developer, photographer, footballer.",
+
+  /**
+   * The meta description — what Google prints under the title and what
+   * WhatsApp shows beneath a shared link. Different job from `tagline`, which
+   * is display copy: this one wants 150–160 characters and the words someone
+   * would actually search for.
+   */
+  description:
+    "Oreoluwa Johnson is a full-stack developer in Lagos, Nigeria, building web applications with TypeScript, React, Next.js and Postgres. Projects, photography and contact.",
   email: "theemmanueljohnson@gmail.com",
   location: "Lagos, Nigeria",
-  // Domain from your CV — point it at Vercel in stage 9.
-  url: "https://oreoluwajohnson.com",
+
+  /**
+   * The canonical origin. Everything absolute is built from it: canonical
+   * links, the sitemap, og:url and the social card.
+   *
+   * It has to match the domain the site is actually served from, or Google
+   * reads every page as a copy of one that doesn't resolve — so on Vercel set
+   * NEXT_PUBLIC_SITE_URL to the deployment's own URL until the custom domain
+   * is attached. The fallback is the domain on the CV.
+   */
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://oreoluwajohnson.com").replace(/\/+$/, ""),
 
   /** The hero. Rewrite these two strings whenever the pitch changes. */
   headline: "I build full-stack web applications.",

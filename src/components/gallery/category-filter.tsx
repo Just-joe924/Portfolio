@@ -34,7 +34,7 @@ export function CategoryFilter({
                 "inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm transition-colors",
                 selected
                   ? "border-accent bg-accent/10 font-medium text-accent"
-                  : "border-border text-muted hover:bg-surface-raised hover:text-foreground",
+                  : "border-border-strong text-muted hover:bg-surface-raised hover:text-foreground",
               )}
             >
               {label}

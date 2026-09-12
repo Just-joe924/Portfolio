@@ -12,7 +12,8 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${site.name} — Computer Science student and full-stack developer in Lagos, Nigeria.`,
+  description: `${site.name} — Computer Science student and full-stack developer in Lagos, Nigeria. Background, skills and the route that got me here.`,
+  alternates: { canonical: "/about" },
 };
 
 /** The bio. Edit these four strings; everything else on the page is data-driven. */
@@ -48,7 +49,7 @@ export default function AboutPage() {
             <a
               href={cvHref}
               download
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-border-strong px-5 text-sm font-medium transition-colors hover:bg-surface-raised"
             >
               <Download className="h-4 w-4" aria-hidden />
               {site.cv.label}
