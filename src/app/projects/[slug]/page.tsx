@@ -19,18 +19,30 @@ export function generateStaticParams() {
   return getProjects().map((project) => ({ slug: project.slug }));
 }
 
+/**
+ * The project list is fixed at build time, so anything not in it is a genuine
+ * 404. Left on the default (true), Next renders unknown slugs on demand: the
+ * page below calls notFound() and the right markup comes back, but with a 200
+ * status and a year-long cache header — a soft 404 that a crawler will happily
+ * index as a real page.
+ */
+export const dynamicParams = false;
+
 export function generateMetadata({ params }: Params): Metadata {
   const project = getProject(params.slug);
-  if (!project) return {};
+  // An unknown slug renders not-found below, so give crawlers a title that
+  // says so and keep the 404 out of the index.
+  if (!project) return { title: "Project not found", robots: { index: false } };
 
   return {
     title: project.title,
     description: project.tagline,
+    alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
       title: project.title,
       description: project.summary,
       type: "article",
-      images: project.hasCover ? [{ url: project.cover.src }] : undefined,
+      url: `/projects/${project.slug}`,
     },
   };
 }

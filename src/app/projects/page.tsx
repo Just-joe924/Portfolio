@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Full-stack web applications — e-commerce, workflow automation and student platforms — with write-ups on what each one taught me.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
