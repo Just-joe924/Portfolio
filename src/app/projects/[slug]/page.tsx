@@ -9,6 +9,7 @@ import { ProjectLinks } from "@/components/projects/project-links";
 import { ProjectStatusBadge } from "@/components/projects/project-status-badge";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { Typewriter } from "@/components/ui/typewriter";
 import { NEUTRAL_BLUR_DATA_URL } from "@/lib/blur";
 import { getProject, getProjects } from "@/lib/projects";
 
@@ -73,7 +74,7 @@ export default function ProjectPage({ params }: Params) {
           </div>
 
           <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">
-            {project.title}
+            <Typewriter>{project.title}</Typewriter>
           </h1>
           <p className="mt-3 max-w-prose text-lg text-muted">{project.tagline}</p>
         </Reveal>
@@ -106,7 +107,9 @@ export default function ProjectPage({ params }: Params) {
             </Reveal>
 
             <Reveal>
-              <h2 className="font-display text-xl font-semibold tracking-tight">What it taught me</h2>
+              <h2 className="font-display text-xl font-semibold tracking-tight">
+                <Typewriter>What it taught me</Typewriter>
+              </h2>
               <ul className="mt-4 space-y-3">
                 {project.learnings.map((learning) => (
                   <li
@@ -142,7 +145,9 @@ export default function ProjectPage({ params }: Params) {
       {project.screenshots && project.screenshots.length > 0 && (
         <Container className="pt-14">
           <Reveal>
-            <h2 className="font-display text-xl font-semibold tracking-tight">Screenshots</h2>
+            <h2 className="font-display text-xl font-semibold tracking-tight">
+              <Typewriter>Screenshots</Typewriter>
+            </h2>
           </Reveal>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {project.screenshots.map((shot) => (
@@ -167,7 +172,7 @@ export default function ProjectPage({ params }: Params) {
       <Container className="pt-14">
         <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-8">
           <h2 className="font-display text-lg font-semibold tracking-tight">
-            Want to see it running?
+            <Typewriter>Want to see it running?</Typewriter>
           </h2>
           <p className="mt-2 max-w-prose text-sm text-muted">
             The live site and source are linked below where they&rsquo;re available.
@@ -182,7 +187,9 @@ export default function ProjectPage({ params }: Params) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h2 className="font-display text-xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="font-display text-xl font-semibold tracking-tight">
+        <Typewriter>{title}</Typewriter>
+      </h2>
       <p className="mt-3 max-w-prose leading-relaxed text-muted">{children}</p>
     </div>
   );

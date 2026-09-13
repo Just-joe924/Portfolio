@@ -4,6 +4,7 @@ import { ArrowRight, Download, Mail } from "lucide-react";
 
 import { Status } from "@/components/home/status";
 import { Container } from "@/components/ui/container";
+import { Typewriter } from "@/components/ui/typewriter";
 import { publicFileExists } from "@/lib/assets";
 import { NEUTRAL_BLUR_DATA_URL } from "@/lib/blur";
 import { site } from "@/lib/site";
@@ -26,18 +27,14 @@ export function Hero() {
         <div>
           <Status className="animate-fade-up" />
 
-          <h1
-            className="mt-5 animate-fade-up font-display text-[2rem] font-semibold leading-[1.1] tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl"
-            style={{ animationDelay: "60ms" }}
-          >
-            {site.headline}
+          {/* These two type themselves rather than fading in — a fade under a
+              typing caret reads as two effects fighting. */}
+          <h1 className="mt-5 font-display text-[2rem] font-semibold leading-[1.1] tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
+            <Typewriter>{site.headline}</Typewriter>
           </h1>
 
-          <p
-            className="mt-5 max-w-prose animate-fade-up text-base leading-relaxed text-muted sm:mt-6 sm:text-lg"
-            style={{ animationDelay: "120ms" }}
-          >
-            {site.intro}
+          <p className="mt-5 max-w-prose text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
+            <Typewriter>{site.intro}</Typewriter>
           </p>
 
           <div

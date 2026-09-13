@@ -201,7 +201,7 @@ export function renderPersonOgImage() {
       <Card
         eyebrow={site.role}
         title={site.name}
-        // Not `tagline` — it opens with "Full-stack developer", which the
+        // Not `tagline` — it opens with "Software engineer", which the
         // eyebrow already says two lines above.
         description={site.headline}
         portrait={publicFileAsDataUrl(site.portrait.src)}

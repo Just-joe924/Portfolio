@@ -88,6 +88,46 @@
   transform: none;
 }
 
+/* --- Typewriter ---------------------------------------------------------- */
+
+/* Every character is in the DOM from the start and only turns visible, so the
+   text wraps where it always would and nothing below it moves while it types.
+   See src/components/ui/typewriter.tsx. */
+
+.tw-char {
+  opacity: 0;
+}
+
+.tw-char[data-on] {
+  opacity: 1;
+}
+
+.tw-caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 1em;
+  margin-left: 0.05em;
+  vertical-align: -0.14em;
+  background-color: currentColor;
+  /* Only the caret on the line being typed is visible; the others sit at zero
+     width's worth of nothing. */
+  opacity: 0;
+}
+
+[data-caret] > .tw-caret {
+  animation: tw-blink 1.05s step-end infinite;
+}
+
+@keyframes tw-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 /* --- Ambient background -------------------------------------------------- */
 
 .ambient {
@@ -162,6 +202,17 @@
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  /* The typewriter doesn't split the text at all when motion is reduced, so
+     these only matter if the setting is turned on after the page loaded — at
+     which point a half-typed heading must not be left half-visible. */
+  .tw-char {
+    opacity: 1;
+  }
+
+  .tw-caret {
+    display: none;
   }
 
   *,

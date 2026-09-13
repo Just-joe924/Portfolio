@@ -6,6 +6,7 @@ import { Status } from "@/components/home/status";
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
+import { Typewriter } from "@/components/ui/typewriter";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function ContactPage() {
               className="rounded-lg border border-border bg-surface p-5 sm:p-8"
             >
               <h2 id="contact-form-heading" className="font-display text-xl font-semibold tracking-tight">
-                Send a message
+                <Typewriter>Send a message</Typewriter>
               </h2>
               <div className="mt-6">
                 <ContactForm />
