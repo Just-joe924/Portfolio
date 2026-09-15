@@ -30,15 +30,15 @@ export const photos: Photo[] = [
   {
     id: "deep-breath",
     category: "moments",
-    src: "/images/Moments/SAM_0691.JPG",
+    src: "/images/Moments/deep-breath.jpg",
     title: "Deep Breath.",
     caption:
       "Head in hand, knee strapped: a quiet minute on the sideline before coming on for Golden Stars in the 2024/2025 AUPL season.",
-    alt: "A young man in a hooded grey and navy jacket sits against a chain-link fence with a hand on his head and a bandage on his knee, another player seated behind him.",
-    width: 2000,
-    height: 1500,
+    alt: "A grainy black-and-white photo of a young man in a hooded, striped track jacket sitting against a chain-link fence, one hand on his head and a bandage on his knee, another player seated behind him.",
+    width: 1170,
+    height: 874,
     blurDataURL:
-      "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoKAAcAAsBMJZQCdADdKs+FGkgAAPsfZ1N7Ix21uY2NGDdhIDk5y134KXn2yKheKMpaJQAo20KFx4v4AAA=",
+      "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoKAAcAAsBMJaQAAqsZq18AAP6msbMuBPVSkasbrH2iDfTC1gFJYmd8mw5P6GkYTIBm5+QAAAA=",
   },
   {
     id: "summit",
