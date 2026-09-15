@@ -138,18 +138,6 @@ export const photos: Photo[] = [
       "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAAAQAgCdASoKAAYAAsBMJZwCdAD8ZLkG4QAAAPwpKXdfwP+U2C6LZeSudgiq1WIAAAA=",
   },
   {
-    id: "matric",
-    category: "people",
-    src: "/images/People/IMG-20250315-WA0027.jpg",
-    title: "Matric.",
-    caption: "2024 Direct Entry matriculation ceremony.",
-    alt: "A student in a purple matriculation gown and cap stands in front of a car beside an older man in a checked blazer, who has an arm around his shoulder.",
-    width: 476,
-    height: 913,
-    blurDataURL:
-      "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADQAQCdASoFAAoAAsBMJQBOgB6VkA0yAAD5CUXFKeLI7DAIUc9yOm5xmEocccRagpl2yr63BiBM1w1G+SEUBMi9R54AAA==",
-  },
-  {
     id: "sophomore-gala",
     category: "people",
     src: "/images/People/IMG-20250628-WA0012.jpg",
