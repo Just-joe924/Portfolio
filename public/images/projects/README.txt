@@ -1,7 +1,7 @@
 Project cover images go here.
 
 Filenames must match cover.src in src/data/projects.ts:
-  cara.png
+  eremarket.png
   admission-letter-automation.png
   nacos-aul-platform.png
 
