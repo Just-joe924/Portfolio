@@ -14,28 +14,42 @@ import type { Project } from "@/types/project";
  */
 export const projects: Project[] = [
   {
-    slug: "cara",
-    title: "Cara",
-    tagline: "A static fashion template rebuilt as a real full-stack store.",
+    slug: "eremarket",
+    title: "EreMarket",
+    tagline:
+      "Rebuilt an ecommerce website into a B2B retail management platform for local retailers, supermarkets and physical stores.",
     summary:
-      "A complete e-commerce application for a fashion retailer: browsing, search, filtering, cart, checkout and order handling, backed by a real database rather than hardcoded products.",
+      "A full-stack B2B retail management platform that helps local retailers manage products, inventory, orders, storefront information and day-to-day store operations. Everything a merchant publishes feeds a shared marketplace their customers can order from.",
     problem:
-      "Cara started life as a static HTML template — attractive, but every product was hardcoded and nothing could actually be bought. I wanted to find out what it really takes to turn a page that looks like a shop into a shop, which is mostly the parts a template leaves out: persistence, validation, and what happens after someone clicks Pay.",
+      "Shops around me run on disconnected tools: stock counted in a notebook, orders taken over WhatsApp, prices agreed in chat and nothing agreeing with anything else. I already had a working ecommerce codebase, so the question I wanted to answer was whether a familiar shopping foundation could be turned around and pointed at the merchant instead — one place where a retailer sets up their business, lists what they actually stock, keeps the counts current and runs orders through to collection.",
     build:
-      "A client/server monorepo. The front end is Vite, React, TypeScript and Tailwind, with pages for Home, Shop, Product, Cart, Checkout, Blog, About and Contact built from reusable components. The server is Express and TypeScript over a Supabase Postgres database whose schema I designed myself — row-level security policies, database triggers, and a seeding script for the product catalogue. Shopping is fully wired: product browsing, search, brand and category filtering, sorting, live cart totals, checkout validation, order summaries, and an Express order-finalisation endpoint that commits the order transactionally.",
+      "I evolved the existing client/server monorepo into a merchant-first platform rather than starting over. The front end is Vite, React, TypeScript and Tailwind, and the merchant side of it is an onboarding flow capturing business name, type, contact details, address and logo; a dashboard for the catalogue with per-product stock levels and low-stock flags, image upload and generated product descriptions; an order view that breaks each customer order down to the line items belonging to that merchant, with fulfilment status they can move themselves; and a public storefront page per shop. Behind it, Express and TypeScript sit over a Supabase Postgres schema I designed — row-level security so a merchant only ever reaches their own rows, database triggers, and an order-finalisation endpoint that recomputes totals server-side, checks stock and commits the order transactionally. Checkout is priced in naira through Paystack, with pay-on-collection for buyers who walk in, and Resend handles receipts and fulfilment email. The structural work was re-centring the information architecture on the merchant: onboarding, catalogue, stock, orders and storefront became one workflow instead of screens bolted onto a shopping journey.",
     learnings: [
-      "Row-level security is a design decision, not a setting. Getting the policies right meant thinking about who owns each row before writing any queries.",
-      "Checkout is where a project stops being a UI exercise. Validation, totals and order state have to agree with each other on the server, because the client cannot be trusted with any of them.",
-      "A monorepo only pays off if the shared types are genuinely shared — duplicating the product type on both sides defeats the point.",
+      "Designing for a business workflow is not the same as building isolated CRUD screens. Products, stock, orders and storefront details have to connect into one coherent merchant journey — editing a stock count has to mean something to an order two screens away.",
+      "A dashboard earns its place by prioritising. A retailer needs the operational signals first — what is running out, what is waiting on them — not a table they have to read end to end before they know whether anything needs doing.",
+      "Reworking an existing full-stack application taught me how to evolve a codebase without discarding working functionality. The schema, auth and payments stayed; the routing, naming and information architecture moved to a merchant-first shape.",
     ],
     role: "Solo build",
-    stack: ["React", "TypeScript", "Vite", "Tailwind CSS", "Express.js", "Supabase", "PostgreSQL"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Express.js",
+      "Supabase",
+      "PostgreSQL",
+      "Paystack",
+      "Resend",
+    ],
     year: 2026,
     status: "live",
     featured: true,
-    liveUrl: "https://responsive-e-commerce-website-six.vercel.app",
-    repoUrl: "https://github.com/Just-joe924/Cara",
-    cover: { src: "/images/projects/cara.png", alt: "The Cara storefront" },
+    liveUrl: "https://www.eremarket.store",
+    repoUrl: "https://github.com/Just-joe924/Eremarket",
+    cover: {
+      src: "/images/projects/eremarket.png",
+      alt: "The EreMarket marketplace home page",
+    },
   },
   {
     slug: "admission-letter-automation",
